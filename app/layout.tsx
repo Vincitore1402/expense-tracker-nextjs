@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Roboto, Roboto_Mono } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
+
+import { Header } from "@/app/components/Header";
 
 const robotoSans = Roboto({
   weight: "400",
@@ -25,10 +28,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${robotoSans.className} ${robotoMono.className}`}>
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={`${robotoSans.className} ${robotoMono.className}`}>
+          <Header />
+          <main className="container">{children}</main>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
