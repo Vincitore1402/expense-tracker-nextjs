@@ -1,4 +1,6 @@
 import { currentUser } from "@clerk/nextjs/server";
+import { AddTransaction } from "@/app/components/AddTransaction";
+import { Balance } from "@/app/components/Balance";
 
 import { Guest } from "@/app/components/Guest";
 
@@ -12,7 +14,9 @@ export default async function HomePage() {
 
   return (
     <main>
-      <h1>Welcome, {userName}!</h1>
+      <h2>Welcome, {userName}!</h2>
+      <Balance />
+      <AddTransaction />
     </main>
   );
 }
