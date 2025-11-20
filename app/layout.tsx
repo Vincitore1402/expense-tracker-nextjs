@@ -1,9 +1,10 @@
+import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Roboto, Roboto_Mono } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
-import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+import "./globals.css";
 
 import { Header } from "@/app/components/Header";
 

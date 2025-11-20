@@ -3,7 +3,7 @@
 import { auth } from "@clerk/nextjs/server";
 
 import { db } from "@/lib/db";
-import { Transaction } from "@/types/Transaction";
+import type { Transaction } from "@/types/Transaction";
 
 type GetTransactionsResult = {
   data?: Transaction[];

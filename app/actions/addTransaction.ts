@@ -1,7 +1,9 @@
 "use server";
+
 import { auth } from "@clerk/nextjs/server";
-import { db } from "@/lib/db";
 import { revalidatePath } from "next/cache";
+
+import { db } from "@/lib/db";
 
 interface TransactionData {
   text: string;
@@ -43,6 +45,7 @@ async function addTransaction(formData: FormData): Promise<TransactionResult> {
 
     return { data: transactionData };
   } catch (error) {
+    console.error("Failed to add transaction", error);
     return { error: "Transaction not added" };
   }
 }

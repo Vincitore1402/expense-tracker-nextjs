@@ -35,6 +35,7 @@ const deleteTransaction = async (
 
     return { message: "Transaction deleted" };
   } catch (error) {
+    console.error("Failed to delete transaction", error);
     return { error: "Unable to delete transaction" };
   }
 };

@@ -1,7 +1,7 @@
 import { currentUser } from "@clerk/nextjs/server";
+
 import { AddTransaction } from "@/app/components/AddTransaction";
 import { Balance } from "@/app/components/Balance";
-
 import { Guest } from "@/app/components/Guest";
 import TransactionList from "@/app/components/TransactionList";
 

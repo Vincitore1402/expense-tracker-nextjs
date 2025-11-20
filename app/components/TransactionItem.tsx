@@ -1,8 +1,10 @@
 "use client";
-import { Transaction } from "@/types/Transaction";
-import { formatCurrency } from "@/lib/utils";
+
 import { toast } from "react-toastify";
+
 import deleteTransaction from "@/app/actions/deleteTransaction";
+import { formatCurrency } from "@/lib/utils";
+import type { Transaction } from "@/types/Transaction";
 
 const TransactionItem = ({ transaction }: { transaction: Transaction }) => {
   const sign = transaction.amount < 0 ? "-" : "+";

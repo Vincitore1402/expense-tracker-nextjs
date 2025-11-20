@@ -1,4 +1,5 @@
 import { SignedIn, SignedOut, UserButton, SignInButton } from "@clerk/nextjs";
+
 import { checkUser } from "@/lib/checkUser";
 
 export const Header = async () => {
