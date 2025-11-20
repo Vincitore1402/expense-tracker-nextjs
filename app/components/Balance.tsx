@@ -1,4 +1,5 @@
 import { getUserBalance } from "@/app/actions/getUserBalance";
+import { formatCurrency } from "@/lib/utils";
 
 export const Balance = async () => {
   const { data, error } = await getUserBalance();
@@ -15,16 +16,16 @@ export const Balance = async () => {
     <section className="balance-card">
       <div>
         <p className="eyebrow">Total Balance:</p>
-        <h1>${data.balance.toFixed(2)}</h1>
+        <h1>${formatCurrency(data.balance)}</h1>
       </div>
       <div className="inc-exp-container">
         <div>
           <h4>Income</h4>
-          <p className="money plus">${data.income.toFixed(2)}</p>
+          <p className="money plus">${formatCurrency(data.income)}</p>
         </div>
         <div>
           <h4>Expense</h4>
-          <p className="money minus">${data.expense.toFixed(2)}</p>
+          <p className="money minus">${formatCurrency(data.expense)}</p>
         </div>
       </div>
     </section>
