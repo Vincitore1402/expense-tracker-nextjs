@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
 
+const prismaClientArtifacts = "./app/generated/prisma/**/*";
+
 const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
-    "/api/**/*": ["app/generated/prisma/**/*"],
-    "/*": ["app/generated/prisma/**/*"],
+    "/": [prismaClientArtifacts],
+    "/api/transactions/[id]": [prismaClientArtifacts],
   },
 };
 
